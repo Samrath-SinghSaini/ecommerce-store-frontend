@@ -12,6 +12,9 @@ button {
     font-size: larger;
     background-color: white;
 }
+p{
+    font-size: 20px;
+}
 h1{
     margin-left: 30px;
 }
@@ -335,6 +338,7 @@ position: relative;
 }
 .product-detail{
     width: 300px;
+    
 }
 .product-detail p{
     display: block;
@@ -346,9 +350,7 @@ position: relative;
     
 
 }
-.cart-btn{
-    float: right;
-}
+
 .shop-card-img{
     width:300px;
     height: auto;
@@ -404,4 +406,148 @@ position: relative;
 
 .admin-products button, .admin-category button{
 margin: 10px;
+}
+
+/* Product Page CSS*/
+    .product-page{
+        
+    }
+.item-parent-container{
+    display: flex;
+    padding: 10px 100px;
+    
+}
+.user-review-div{
+    padding: 10px 100px;
+}
+.similar-product-div{
+    padding: 10px 100px;
+    overflow: hidden;
+}
+.item-img-div{
+    display: inline-block;
+}
+.item-img{
+    width:500px; 
+    height:auto; 
+}
+.item-info{
+    display: inline-block;
+    padding-left: 30px;
+}
+.item-info h1, .item-info h3{
+    margin:0;
+}
+.item-info button{
+    margin:15px 15px 0 0;
+}
+.review-div{
+    padding-top:10px;
+}
+
+/*Wishlist stuff*/
+
+.wish-main-container{
+   text-align: center;
+}
+.card-div{text-align: left;}
+.wish-head{
+    margin-left:200px
+}
+.wishlist-btn{
+    border: none;
+}
+
+/*Cart stuff */
+.cart-div h1{
+    margin-left:70px;
+}
+.cart-main{
+    display: flex;
+    justify-content: center;
+    padding: 10px 30px;
+}
+
+.cart-product-section{
+    width:70%;
+}
+.cart-product{
+    display: flex;
+    padding:20px; 
+    border: 1px solid grey;
+    position: relative;
+    background-color: #F0F0F0;
+    
+}
+ 
+.cart-product-image{
+    width:300px;
+    height:auto; 
+    padding:5px; 
+}
+.cart-product-info{
+    padding: 0 20px; 
+    width:50%;
+}
+.cart-product-info-div{
+    margin-left:10px;
+}
+.cart-product-info h2{
+    margin-bottom:5px;
+}
+.cart-product-info p {
+    margin-top: 0;
+}
+
+.cart-product-name{
+    min-height: 100px;
+}
+.cart-product-price{
+    position: absolute;
+    right: 100px;
+    top:65px;
+}
+.counter-btn{
+   border: none;
+   border-radius: 50%;
+   background-color: white; 
+   height:40px; 
+   width:40px;
+   font-size: 20px;
+   vertical-align: middle;
+   text-align: center;
+   margin: 0 5px;
+}
+
+.cart-btn{
+    margin: 0 10px 10px 0;
+}
+.counter-input{
+    width:40px; 
+    font-size: 18px;
+    text-align: center;
+}
+
+.item-total{
+    margin-top:10px;
+}
+/* 
+cart detail section///summary sidebar stuff */
+
+
+.cart-detail-section{
+    width:25%;
+    margin: 0 20px; 
+
+}
+.cart-detail-section h2{
+  margin: 0 0 10px 0;}
+.summary-container{
+    display: flex;
+}
+.summary-container span{
+    margin:10px 10px 10px 0; 
+    min-width: 300px;
+    padding-right:15px;
+    box-sizing: border-box;
 }

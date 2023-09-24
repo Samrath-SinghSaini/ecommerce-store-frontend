@@ -48,11 +48,6 @@ export default function Products(){
             setProductsArr(res)
             
         })
-        .then(()=>{
-            
-            let brand = getBrands()
-            setBrandsArr(brand)
-        })
         .catch((err)=>{
             setProductsArr([-1])
         })
@@ -70,6 +65,10 @@ export default function Products(){
         })
     }, [])
 
+    useEffect(()=>{
+        let brand = getBrands()
+        setBrandsArr(brand)
+    }, productsArr)
     console.log(categoryArr)
       
     

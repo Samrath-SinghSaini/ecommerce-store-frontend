@@ -6,6 +6,7 @@ import CategoryCard from "./CategoryCard";
 import DiscountCard from "./DiscountCard";
 import ArrowBtn from "./ArrowBtn";
 import Footer from './Footer'
+import souled from '../images/souled.jpg'
 function Home() {
   let card = [1, 2, 3, 4, 5, 6];
 
@@ -28,7 +29,7 @@ function Home() {
             <ArrowBack />
           </button>
           {card.map((value) => {
-            return <ProductCard key={value} />;
+            return <ProductCard key={value} src={souled} name='product 1' price='1500'/>;
           })}
           <button className="arrow-btn forward-btn">
             <ArrowForward />
@@ -50,7 +51,6 @@ function Home() {
         </div>
       </div>
       <div className="home-product-container">
-        <h1>Exclusive Discounts</h1>
         <button className="arrow-btn back-btn">
             <ArrowBack />
           </button>

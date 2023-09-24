@@ -10,6 +10,9 @@ import './App.css'
 import Header from './Components/Header'
 import Footer from './Components/Footer';
 import Admin from './Components/Admin';
+import ProductPage from './Components/ProductPage';
+import Cart from './Components/Cart'
+import Wishlist from './Components/Wishlist'
 function App() {
 
   return (
@@ -24,6 +27,9 @@ function App() {
         <Route path='/register' element={<Register/>}></Route>
         <Route path='/products' element={<Products/>}></Route>
         <Route path='/admin' element={<Admin/>}></Route>
+        <Route path='/wishlist' element={<Wishlist/>}></Route>
+        <Route path='/products/item' element={<ProductPage/>}></Route>
+        <Route path='/cart' element={<Cart/>}></Route>
         <Route path='*' element={<Error/>}></Route>
       </Routes>
       <div><Footer/></div>
