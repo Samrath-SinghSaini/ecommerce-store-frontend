@@ -3,7 +3,7 @@ import ArrowBack from "@mui/icons-material/ArrowBackIos";
 function ArrowBtn(){
     return <>
          <button className="arrow-btn back-btn">
-          <ArrowBack />
+          <ArrowBack/>
         </button>
         <button className="arrow-btn forward-btn">
           <ArrowForward />

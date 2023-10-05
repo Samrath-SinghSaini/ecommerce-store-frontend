@@ -1,31 +1,45 @@
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import { useState } from 'react'
 function Register(){
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [username, setUsername] = useState('')
+    const [fullname, setfullname] = useState('')
     const [submitMessage, setSubmitMessage] = useState('')
+    let navigate = useNavigate()
     function connectServer(event){
         console.log("I ran, I ran so far away")
         event.preventDefault()
+        if(email === '' || password === '' || username === ''|| fullname=== ''){
+            setSubmitMessage('One or more fields are empty. Please enter all information.')
+        } else{
         let registerData = {
             email:email, 
             username:username, 
+            fullname: fullname, 
             password:password
         }
-        axios.post('/api/user', JSON.stringify(registerData), {
+        axios.post('/api/user/register', registerData, {
             headers:{
                 "Content-Type":'application/x-www-form-urlencoded'
             }
         })
         .then((res)=>{
-            console.log(res)
+            console.log(res.data)
+            if(res.data.registered){
             setSubmitMessage('Your account has been created')
+            setTimeout(()=>{navigate('/login')}, 2000)
+            } else{
+                setSubmitMessage('Something went wrong try again later')
+            }
         })
         .catch((err)=>{console.log(err)
+            console.log(err)
             setSubmitMessage('There has been an error')
+            console.log(err.response.data.registered)
         })
+    }
 
     }
     
@@ -37,6 +51,8 @@ function Register(){
             setPassword(event.target.value)
         } else if(input == 'username'){
             setUsername(event.target.value)
+        } else if(input == 'fullname'){
+            setfullname(event.target.value)
         }
     }
 
@@ -53,6 +69,10 @@ function Register(){
         <div className='register-section'>
         <label className="register-lbl">Username: </label>
         <input className="register-input" type="text" name='username' value={username} onChange={(event)=>{changeFormData(event)}}></input>
+        </div>
+        <div className='register-section'>
+        <label className="register-lbl">Fullname: </label>
+        <input className="register-input" type="text" name='fullname' value={fullname} onChange={(event)=>{changeFormData(event)}}></input>
         </div>
         <div className='register-section'>
         <label className="register-lbl">Password: </label>

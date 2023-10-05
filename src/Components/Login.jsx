@@ -1,31 +1,57 @@
-import {Link, Form, useSubmit} from 'react-router-dom'
-import {useState} from 'react'
+/* eslint-disable react/prop-types */
+import {Link, Form, useNavigate} from 'react-router-dom'
+import {useEffect, useState} from 'react'
 import axios from 'axios'
-
-function Login(){
+import {redirect} from 'react-router-dom'
+import {setDefaultHeader} from '../axiosConfig'
+function Login(props){
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [submitMessage, setSubmitMessage] = useState('')
+    const [accessToken, setAccessToken] = useState(null)
     
+    let navigate = useNavigate()
     function handleForm(event){
+        
         console.log("I ran, I ran so far away")
         event.preventDefault()
+        if(password.length == 0 || username.length == 0){
+            setSubmitMessage('Password or Username is empty')
+        }
+        else if(password.length <8){
+            setSubmitMessage('Password length is too short. Please choose a longer password.')
+        } 
+        
+        else{
         let loginData = {
             username:username, 
             password:password
         }
         axios.post('/api/user/login', (loginData), {
             headers:{
-                "Content-Type":'application/x-www-form-urlencoded'
+                "Content-Type":'application/x-www-form-urlencoded', 
             }
         })
         .then((res)=>{
             console.log(res)
-            setSubmitMessage('Your account has been created')
+            console.log(document.cookie)
+            if(res.data.authenticated === true && res.status === 200){
+                setSubmitMessage('You have been authenticated successfully')
+                console.log('res token val')
+                console.log(res.data.token)
+                props.setAuthToken(res.data.token)
+                props.changeLogInState(true)
+                // setTimeout(()=>{navigate('/products')}, 2000)
+                      
+            } else{
+                setSubmitMessage('try again later')
+            }
         })
         .catch((err)=>{console.log(err)
-            setSubmitMessage('There has been an error')
+            setSubmitMessage(err.response.data.message)
+            
         })
+    }
 
     }
 
@@ -53,7 +79,7 @@ function Login(){
         <div className='login-btn-container'>
         <button className="login-btn" type="submit">Submit</button>
         <Link to='/' className='forgot-pass'>Forgot Password?</Link>
-        <p>{submitMessage}</p>
+        <p className='login-submit-message'>{submitMessage}</p>
         </div>
         </form>
         </div>
