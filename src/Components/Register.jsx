@@ -29,14 +29,14 @@ function Register(){
             console.log(res.data)
             if(res.data.registered){
             setSubmitMessage('Your account has been created')
-            setTimeout(()=>{navigate('/login')}, 2000)
+            setTimeout(()=>{navigate('/login')}, 10000)
             } else{
                 setSubmitMessage('Something went wrong try again later')
             }
         })
         .catch((err)=>{console.log(err)
             console.log(err)
-            setSubmitMessage('There has been an error')
+            setSubmitMessage(err.response.data.message)
             console.log(err.response.data.registered)
         })
     }

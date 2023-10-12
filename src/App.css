@@ -206,12 +206,17 @@ margin: 10px;
 }
 .category-name{
 font-size: 32px;
+padding:5px 5px 10px 5px;
+}
+.category-name-div{
+    background-color: black;
+  
 }
 .category-btn{
     text-align: center;
     display: inline-block;
     border: none;
-    background-color: #DDE6ED;
+    background-color: black;
     color: white;
 }
 
@@ -369,7 +374,7 @@ position: relative;
     padding-bottom: 5px;
 }
 .detail-div{
-    
+text-wrap: initial;    
 
 }
 
@@ -591,4 +596,8 @@ cart detail section///summary sidebar stuff */
 
 .access-h1{
     margin:20px 0; 
+}
+
+.empty-cart{
+    margin-left:70px;
 }

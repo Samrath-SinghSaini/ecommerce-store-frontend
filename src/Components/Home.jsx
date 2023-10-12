@@ -1,5 +1,5 @@
-import { Route, Routes } from "react-router-dom";
-import { useRef } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import { useRef, useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import ArrowForward from "@mui/icons-material/ArrowForwardIos";
 import ArrowBack from "@mui/icons-material/ArrowBackIos";
@@ -10,12 +10,17 @@ import Footer from "./Footer";
 import souled from "../images/souled.jpg";
 import ShopCard from "./ShopCard";
 import React from "react";
+import axios from 'axios'
 function Home() {
   let card = [1, 2, 3, 4, 5, 6];
 
   const scrollRef1 = useRef(null);
   const scrollRef2 = useRef(null)
+  const [bestSellerArr, setBestSellerArr] = useState([])
+  const [discountArr, setDiscountArr] = useState([])
+  const [categoryArr, setCategoryArr] = useState([])
   let refArr = [scrollRef1, scrollRef2]
+  const navigate = useNavigate()
   // function moveElement(event) {
   //   let btnName = event.currentTarget.name;
 
@@ -64,7 +69,88 @@ function Home() {
       }
     }
   }
+  async function getBestSellers() {
+    try {
+      console.log("from products");
 
+      let res = await axios.get("/api/home/best", {
+        withCredentials: true,
+      });
+      console.log(res.data)
+      setBestSellerArr(res.data)
+      return res.data;
+    } catch (err) {
+      console.log(err);
+      return [-1];
+    }
+  }
+  async function getDiscounts() {
+    try {
+      console.log("from home discounts");
+
+      let res = await axios.get("/api/home/discount", {
+        withCredentials: true,
+      });
+      console.log('from get discounts')
+      console.log(res.data)
+      setDiscountArr(res.data)
+      return res.data;
+    } catch (err) {
+      console.log(err);
+      return [-1];
+    }
+  }
+
+  async function getCategories() {
+    try {
+      let res = await axios.get("/api/category/fetch");
+      return res.data;
+    } catch (err) {
+      console.log(err);
+      return [-1];
+    }
+  }
+  useEffect(()=>{
+    getBestSellers()
+    .then((res)=>{
+      console.log(res)
+    })
+    .catch((err)=>{
+      console.log(err)
+      setBestSellerArr([new Array(10).fill({category:"laptop",
+        name:"Apple Macbook Pro",
+        price:"3000",
+        image:"650398d9dbfc73f56796eacb"})])
+    })
+    getDiscounts()
+    .then((res)=>{
+      console.log(res)
+    })
+    .catch((err)=>{
+      console.log(err)
+      setDiscountArr([new Array(10).fill({category:"laptop",
+        name:"Apple Macbook Pro",
+        price:"3000",
+        image:"650398d9dbfc73f56796eacb"})])
+    })
+
+    getCategories()
+      .then((res) => {
+        let tempCat = [];
+        res.map((element) => {
+          tempCat.push(element.name);
+        });
+        console.log(tempCat)
+        setCategoryArr(tempCat);
+      })
+      .catch((err) => {
+        setCategoryArr([-1]);
+      });
+  }, [])
+
+  function categoryOnClick(name){
+    navigate('/products', {state:{categoryName:name}})
+  }
 
 
   return (
@@ -92,14 +178,15 @@ function Home() {
           >
             <ArrowBack />
           </button>
-          {card.map((value, index) => {
+          {bestSellerArr.map((element, index) => {
             return (
               <ShopCard
                 key={index}
-                category="laptop"
-                name="Apple Macbook Pro"
-                price="3000"
-                image="650398d9dbfc73f56796eacb"
+                category={element.category}
+                name={element.name}
+                price={element.price.$numberDecimal}
+                image={element.image}
+                id={element._id}
               />
             );
           })}
@@ -120,9 +207,9 @@ function Home() {
       <div className="home-categories-container">
         <h1 className="categories-heading">Browse By Categories</h1>
         <div className="categories-card-container">
-          {card.map((value) => {
+          {categoryArr.map((element, value) => {
             return (
-              <CategoryCard src={value} key={value} name={"Category" + value} />
+              <CategoryCard src={element} key={value} name={element} clickFunc={categoryOnClick} />
             );
           })}
         </div>
@@ -140,15 +227,16 @@ function Home() {
           <ArrowBack />
         </button>
         <div className="card-container" ref={refArr[1]}>
-          {card.map((value, index) => {
+          {discountArr.map((element, index) => {
             //category/image/name price
             return (
               <ShopCard
                 key={index}
-                category="laptop"
-                name="Apple Macbook Pro"
-                price="3000"
-                image="650398d9dbfc73f56796eacb"
+                category={element.category}
+                name={element.name}
+                price={element.price.$numberDecimal}
+                image={element.image}
+                id={element._id}
               />
             );
           })}

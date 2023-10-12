@@ -30,7 +30,13 @@ function Header(props){
         <button className="nav-btn" style={{display: !isLoggedIn ? 'inline-block' :'none'}}>Register</button>
         </Link>
         <Link to='/products'>
-        <button className="nav-btn" >Products</button>
+        <button className="nav-btn" style={{display: isLoggedIn ? 'inline-block' :'none'}} >Products</button>
+        </Link>
+        <Link to='/wishlist'>
+        <button className="nav-btn" style={{display: isLoggedIn ? 'inline-block' :'none'}} >Wishlist 💟</button>
+        </Link>
+        <Link to='/cart'>
+        <button className="nav-btn" style={{display: isLoggedIn ? 'inline-block' :'none'}} >Cart 🛒</button>
         </Link>
         <Link to='/'>
         <button className="nav-btn" style={{display: isLoggedIn ? 'inline-block' :'none'}} onClick={logoutFunc}>Logout</button>

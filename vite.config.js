@@ -10,7 +10,8 @@ export default defineConfig({
      
     '/images':'http://localhost:3000/images',
     '/api/products':'http://localhost:3000/api/products', 
-    '/api/category':'http://localhost:3000/api/category'
+    '/api/category':'http://localhost:3000/api/category', 
+    '/api/home':'http://localhost:3000/api/home'
     }
   }, 
   root:'.', 
