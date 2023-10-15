@@ -3,23 +3,23 @@
 {
     "rewrites": [
       {
-        "source": "/api",
+        "source": "https://ecommerce-store-frontend-kappa.vercel.app/api",
         "destination": "https://ecommerce-store-backend-vop3.onrender.com"
       }, 
       {
-        "source": "/images",
+        "source": "https://ecommerce-store-frontend-kappa.vercel.app/images",
         "destination": "https://ecommerce-store-backend-vop3.onrender.com/images" 
       },
       {
-        "source": "/api/products",
+        "source": "https://ecommerce-store-frontend-kappa.vercel.app//api/products",
         "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/products"
       },
       {
-        "source": "/api/category",
+        "source": "https://ecommerce-store-frontend-kappa.vercel.app/api/category",
         "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/category"
       }, 
       {
-        "source": "/api/home",
+        "source": "https://ecommerce-store-frontend-kappa.vercel.app/api/home",
         "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/home"
       }
     ]
