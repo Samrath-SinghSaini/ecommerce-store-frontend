@@ -59,7 +59,7 @@ function ProductPage(prop) {
     console.log(productInfo);
   })();
 
-  let imgBaseUrl = "http://localhost:3000/images/";
+  let imgBaseUrl = "https://ecommerce-store-backend-vop3.onrender.com/images/";
   return (
     <div className="product-page">
       <div className="item-parent-container">

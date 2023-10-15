@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 function CategoryCard(props) {
-  let src = 'http://localhost:3000/images/categoryimages/' + props.src + '.jpg'
+  let src = 'https://ecommerce-store-backend-vop3.onrender.com/images/CategoryImages/' + props.src + '.jpg'
  
   return (
     <div className="category-card-container">

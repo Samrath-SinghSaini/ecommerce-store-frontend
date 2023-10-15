@@ -1,17 +1,19 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-
+import dotenv from 'dotenv'
+dotenv.config()
+let baseURL = 'https://ecommerce-store-backend-vop3.onrender.com'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   server:{
     proxy:{
-      '/api':'http://localhost:3000',
+      '/api':baseURL,
      
-    '/images':'http://localhost:3000/images',
-    '/api/products':'http://localhost:3000/api/products', 
-    '/api/category':'http://localhost:3000/api/category', 
-    '/api/home':'http://localhost:3000/api/home'
+    '/images':baseURL+'/images',
+    '/api/products':baseURL+'/api/products', 
+    '/api/category':baseURL+'/api/category', 
+    '/api/home':baseURL+'/api/home'
     }
   }, 
   root:'.', 

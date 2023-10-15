@@ -1,4 +1,5 @@
 import { useState } from "react";
+import dotenv from 'dotenv'
 
 /* eslint-disable react/prop-types */
 function CategoryVal(innerProp) {

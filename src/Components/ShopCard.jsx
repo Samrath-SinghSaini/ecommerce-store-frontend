@@ -9,7 +9,7 @@ function ShopCard(props) {
   //category/image/name price
   const [inWishList, setInWishlist] = useState(false);
   const [inCart, setInCart] = useState(false);
-  let baseUrl = "http://localhost:3000/images/";
+  let baseUrl = "https://ecommerce-store-backend-vop3.onrender.com/images/";
   let imgSrc = baseUrl + props.category + "/" + props.image + ".jpg";
 
   let wishListEmpty = { color: "red" };

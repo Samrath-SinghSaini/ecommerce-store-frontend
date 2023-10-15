@@ -10,7 +10,7 @@ function ProductSection(innerProp, { updateTotalPrice }) {
   const [price, setPrice] = useState(
     Number(innerProp.price) * Number(innerProp.quantity)
   );
-  let imgUrl = 'http://localhost:3000/images/' + innerProp.category + '/' + innerProp.src+ '.jpg'
+  let imgUrl = 'https://ecommerce-store-backend-vop3.onrender.com/images/' + innerProp.category + '/' + innerProp.src+ '.jpg'
   function changeQuantity(event) {
     let val = event.target.value;
     if (val == "increment") {
