@@ -3,7 +3,7 @@
 {
     "rewrites": [
       {
-        "source": "https://ecommerce-store-frontend-kappa.vercel.app/api",
+        "source": "https://ecommerce-store-frontend-kappa.vercel.app",
         "destination": "https://ecommerce-store-backend-vop3.onrender.com"
       }, 
       {
