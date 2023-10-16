@@ -4,7 +4,8 @@
     "rewrites": [
       {
         "source": "/api",
-        "destination": "https://ecommerce-store-backend-vop3.onrender.com"
+        "destination": "https://ecommerce-store-backend-vop3.onrender.com/api"
+        
       }, 
       {
         "source": "/images",
