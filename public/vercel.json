@@ -26,9 +26,6 @@
       {
         "source": "/api/user/:match",
         "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/user/:match"
-      }, {
-        "source":"./src/images/splash1.jpg", 
-        "destination":"https://ecommerce-store-backend-vop3.onrender.com/images/SplashImages/splash1.jpg"
       }
     ]
   }
