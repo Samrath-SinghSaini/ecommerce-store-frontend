@@ -9,7 +9,7 @@ function Register(){
     const [submitMessage, setSubmitMessage] = useState('')
     let navigate = useNavigate()
     function connectServer(event){
-        console.log("I ran, I ran so far away")
+        // console.log("I ran, I ran so far away")
         event.preventDefault()
         if(email === '' || password === '' || username === ''|| fullname=== ''){
             setSubmitMessage('One or more fields are empty. Please enter all information.')
@@ -26,7 +26,7 @@ function Register(){
             }
         })
         .then((res)=>{
-            console.log(res.data)
+            // console.log(res.data)
             if(res.data.registered){
             setSubmitMessage('Your account has been created')
             setTimeout(()=>{navigate('/login')}, 10000)
@@ -35,7 +35,7 @@ function Register(){
             }
         })
         .catch((err)=>{console.log(err)
-            console.log(err)
+        
             setSubmitMessage(err.response.data.message)
             console.log(err.response.data.registered)
         })

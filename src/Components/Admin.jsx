@@ -40,7 +40,7 @@ function Admin() {
       setFunctionField(false);
       setBtnVal("Add " + option);
     }
-    console.log(checkedBtn);
+    // console.log(checkedBtn);
   }
 
   function submitProductForm(event) {
@@ -67,12 +67,12 @@ function Admin() {
         },
       })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
       })
       .catch((err) => {
         console.log(err);
       });
-    console.log(data);
+    // console.log(data);
   }
 
   function submitCategoryForm(event) {
@@ -90,7 +90,7 @@ function Admin() {
         },
       })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setMessage("Successfully created a category:" + parent.name.value);
       })
       .catch((err) => {

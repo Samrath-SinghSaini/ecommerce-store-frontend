@@ -32,21 +32,21 @@ function Login(props) {
           },
         })
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           let cookieValues = document.cookie;
 
           let authCookie = document.cookie.split("; ").find((item) => {
             return item.startsWith("isLoggedIn");
           });
-          console.log(authCookie)
+          // console.log(authCookie)
           let authCookieVal = authCookie.split("=")[1];
-          console.log("this is auth cookie");
-          console.log(authCookieVal);
-          console.log("this is the auth cookie --" + authCookieVal);
+          // console.log("this is auth cookie");
+          // console.log(authCookieVal);
+          // console.log("this is the auth cookie --" + authCookieVal);
           if (res.data.authenticated === true && res.status === 200) {
             setSubmitMessage("You have been authenticated successfully");
-            console.log("res token val");
-            console.log(res.data);
+            // console.log("res token val");
+            // console.log(res.data);
             if (res.data.isAdmin) {
               props.changeIsAdmin(true);
             }

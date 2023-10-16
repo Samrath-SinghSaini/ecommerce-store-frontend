@@ -5,7 +5,7 @@ import { style } from "@mui/system";
 import { useEffect, useRef, useState } from "react";
 import ProductCard from "./ProductCard";
 import ArrowForward from "@mui/icons-material/ArrowForwardIos";
-import souled from "../images/souled.jpg";
+
 import ArrowBack from "@mui/icons-material/ArrowBackIos";
 import { useParams } from "react-router-dom";
 import Axios from "axios";

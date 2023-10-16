@@ -124,7 +124,7 @@ function Cart(props) {
 
   useEffect(()=>{
     getCartItems()
-    .then((res)=>{console.log(res)})
+    .then((res)=>{console.log('cart res successfully ran')})
     .catch((err)=>{console.log(err)})
     
     if(cartItemsArr.length !== 0){
@@ -152,7 +152,7 @@ function Cart(props) {
         params:{userName:userName}
       })
       console.log('from cart get items- ')
-      console.log(res)
+      // console.log(res)
       setCartItemsArr(res.data.cartArr)
       return res.data.cartArr
       
@@ -166,23 +166,23 @@ function Cart(props) {
   function getSumAdd(quantity, index) {
     let newSum =
       Number(allProductSum) + Number(quantity) * Number(cartItemsArr[index].price.$numberDecimal);
-    console.log(newSum);
-    console.log(typeof newSum);
+    // console.log(newSum);
+    // console.log(typeof newSum);
     setAllProductSum(newSum);
   }
   function getSumSubtract(quantity, index) {
     let newSum =
       Number(allProductSum) - Number(quantity) * Number(cartItemsArr[index].price.$numberDecimal);
-    console.log(newSum);
-    console.log(typeof newSum);
+    // console.log(newSum);
+    // console.log(typeof newSum);
     setAllProductSum(newSum);
   }
   function updateSummaryTotal(newPrice,index){
     
     let tempArr = [...productTotalArr]
     tempArr[index] = newPrice
-    console.log('from update summary total')
-    console.log(tempArr)
+    // console.log('from update summary total')
+    // console.log(tempArr)
     setProductTotalArr(tempArr)
   } 
 

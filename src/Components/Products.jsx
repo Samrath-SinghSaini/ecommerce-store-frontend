@@ -62,7 +62,7 @@ export default function Products(props) {
       let res = await Axios.get("/api/products/fetch", {
         withCredentials: true,
       });
-      console.log(res.data)
+      // console.log(res.data)
       return res.data;
     } catch (err) {
       navigate('/access')
@@ -83,7 +83,7 @@ export default function Products(props) {
     try{
       let res = await Axios.get('/api/user/wishlist', {params:{userName:props.userName}})
       let wishListArr = res.data.wishListArr
-      console.log(res.data.wishListArr)
+      // console.log(res.data.wishListArr)
 
       return wishListArr
     }
@@ -142,8 +142,8 @@ export default function Products(props) {
 
       getWishList()
       .then((res)=>{
-        console.log('from use effect, this is your wishlist arr')
-        console.log(res)
+        // console.log('from use effect, this is your wishlist arr')
+        // console.log(res)
         setWishListArr(res)
       })
       .catch((err)=>{
@@ -179,7 +179,7 @@ export default function Products(props) {
     let carryOverArr = tempBrandArr;
     let funcArr = [];
     let checkbox = isChecked;
-    console.log("isChecked is " + isChecked);
+    // console.log("isChecked is " + isChecked);
 
     if (checkbox) {
       productsArr.map((element, index) => {
@@ -188,9 +188,9 @@ export default function Products(props) {
         }
       });
       setFinalArr((prevVal) => {
-        console.log("setfinal triggered");
+        // console.log("setfinal triggered");
         let newArr = [...prevVal, tempBrandArr];
-        console.log(newArr);
+        // console.log(newArr);
         return tempBrandArr;
       });
       checkbox = false;
@@ -199,7 +199,7 @@ export default function Products(props) {
     }
   }
   function sortCategory(categoryName, isChecked) {
-    console.log('sort category called')
+    // console.log('sort category called')
     productsArr.map((element, index) => {
       if (element.category == categoryName) {
         tempCategoryArr.push(element);
@@ -238,7 +238,7 @@ export default function Products(props) {
       }
     } )
     .then((res)=>{
-      console.log(res)
+      // console.log(res)
     })
     .catch((err)=>{
       console.log('from wishlist func - an error occurred')
@@ -255,7 +255,7 @@ export default function Products(props) {
       }
     })
     .then((res)=>{
-      console.log(res)
+      // console.log(res)
     })
     .catch((err)=>{
       console.log('from wishlist func - an error occurred')

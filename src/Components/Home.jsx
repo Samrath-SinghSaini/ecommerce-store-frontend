@@ -7,7 +7,7 @@ import CategoryCard from "./CategoryCard";
 import DiscountCard from "./DiscountCard";
 import ArrowBtn from "./ArrowBtn";
 import Footer from "./Footer";
-import souled from "../images/souled.jpg";
+
 import ShopCard from "./ShopCard";
 import React from "react";
 import axios from 'axios'
@@ -46,15 +46,15 @@ function Home() {
   function moveElement(event, refName) {
     let btnName = event.currentTarget.name;
 
-    console.log(btnName);
-    console.log(refName.current)
+    // console.log(btnName);
+    // console.log(refName.current)
     let maxScrollWidth =
     refName.current.scrollWidth - refName.current.clientWidth;
-    console.log("max scroll:" + maxScrollWidth);
+    // console.log("max scroll:" + maxScrollWidth);
 
     if (btnName == "scroll-forward") {
       refName.current.scrollLeft += 350;
-      console.log(refName.current.scrollLeft);
+      // console.log(refName.current.scrollLeft);
 
       if(maxScrollWidth - refName.current.scrollLeft < 350 && maxScrollWidth - refName.current.scrollLeft > 0){
         refName.current.scrollLeft += maxScrollWidth - refName.current.scrollLeft
@@ -71,28 +71,28 @@ function Home() {
   }
   async function getBestSellers() {
     try {
-      console.log("from products");
+      // console.log("from products");
 
       let res = await axios.get("/api/home/best", {
         withCredentials: true,
       });
-      console.log(res.data)
+      // console.log(res.data)
       setBestSellerArr(res.data)
       return res.data;
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       return [-1];
     }
   }
   async function getDiscounts() {
     try {
-      console.log("from home discounts");
+      // console.log("from home discounts");
 
       let res = await axios.get("/api/home/discount", {
         withCredentials: true,
       });
-      console.log('from get discounts')
-      console.log(res.data)
+      // console.log('from get discounts')
+      // console.log(res.data)
       setDiscountArr(res.data)
       return res.data;
     } catch (err) {
@@ -106,14 +106,14 @@ function Home() {
       let res = await axios.get("/api/category/fetch");
       return res.data;
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       return [-1];
     }
   }
   useEffect(()=>{
     getBestSellers()
     .then((res)=>{
-      console.log(res)
+      // console.log(res)
     })
     .catch((err)=>{
       console.log(err)
@@ -124,7 +124,7 @@ function Home() {
     })
     getDiscounts()
     .then((res)=>{
-      console.log(res)
+      // console.log(res)
     })
     .catch((err)=>{
       console.log(err)
@@ -140,7 +140,7 @@ function Home() {
         res.map((element) => {
           tempCat.push(element.name);
         });
-        console.log(tempCat)
+        // console.log(tempCat)
         setCategoryArr(tempCat);
       })
       .catch((err) => {
@@ -159,7 +159,7 @@ function Home() {
         <button className="arrow-btn back-btn" name="scroll-back">
           <ArrowBack />
         </button>
-        <img src="./src/images/splash1.jpg" className="bannerImg"></img>
+        <img src="./assets/splash1.jpg" className="bannerImg"></img>
         <button className="arrow-btn forward-btn" name="scroll-forward">
           <ArrowForward />
         </button>

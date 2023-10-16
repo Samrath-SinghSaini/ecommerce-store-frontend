@@ -10,7 +10,7 @@ function Header(props){
     async function logoutFunc(){
         axios.get('/api/user/logout')
         .then((res)=>{
-            console.log(res.data)
+            console.log('header - loogut func called')
         })
         props.changeLogInState(false)
         navigate('/')
