@@ -8,6 +8,7 @@ import { useEffect, useState, useRef } from "react";
 import Axios from "axios";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
+
 /* 
 I have a bad habit of never commenting my code but this file is so messy that I feel a moral responsibility to explain this stuff in case any human ever comes across it
 
@@ -268,7 +269,7 @@ export default function Products(props) {
   return (
     <div className="product-page">
       <div className="product-banner">
-        <img src="/src/images/splash2.jpg" className="product-banner-img"></img>
+        <img src="/assets/img/bannerImage1.jpg" className="product-banner-img"></img>
       </div>
 
       <div className="product-div">

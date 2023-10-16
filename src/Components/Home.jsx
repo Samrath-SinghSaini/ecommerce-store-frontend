@@ -8,13 +8,13 @@ import DiscountCard from "./DiscountCard";
 import ArrowBtn from "./ArrowBtn";
 import Footer from "./Footer";
 
+
 import ShopCard from "./ShopCard";
 import React from "react";
 import axios from 'axios'
 function Home() {
   let card = [1, 2, 3, 4, 5, 6];
 
-  let splashURL = 'https://ecommerce-store-backend-vop3.onrender.com/images/SplashImages/splash1.jpg'
 
   const scrollRef1 = useRef(null);
   const scrollRef2 = useRef(null)
@@ -161,7 +161,7 @@ function Home() {
         <button className="arrow-btn back-btn" name="scroll-back">
           <ArrowBack />
         </button>
-        <img src={splashURL} className="bannerImg"></img>
+        <img src='/assets/img/bannerImage0.jpg' className="bannerImg"></img>
         <button className="arrow-btn forward-btn" name="scroll-forward">
           <ArrowForward />
         </button>

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect } from 'react';
-import StoreIcon from 'https://ecommerce-store-backend-vop3.onrender.com/images/storeIcon.png'
+
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 function Header(props){
@@ -17,7 +17,7 @@ function Header(props){
     }
     
     return <div className="header-container">
-    <span className='store-icon'><img src={StoreIcon} className='store-icon-img'></img></span>
+    <span className='store-icon'><img src='/assets/img/bannerImage0.png' className='store-icon-img'></img></span>
 
     <div className='nav-btn-container'>
         <Link to='/'>
