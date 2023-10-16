@@ -13,7 +13,7 @@
       },
       {
         "source": "/api/products",
-        "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/products"
+        "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/product"
       },
       {
         "source": "/api/category",
