@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect } from 'react';
-import StoreIcon from '/src/images/storeIcon.png'
+import StoreIcon from 'https://ecommerce-store-backend-vop3.onrender.com/images/storeIcon.png'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 function Header(props){
