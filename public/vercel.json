@@ -8,16 +8,16 @@
         
       }, 
       {
-        "source": "/images",
-        "destination": "https://ecommerce-store-backend-vop3.onrender.com/images/CategoryImages/2.jpg" 
+        "source": "/images:match",
+        "destination": "https://ecommerce-store-backend-vop3.onrender.com/images/:match" 
       },
       {
-        "source": "/api/products",
-        "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/product"
+        "source": "/api/products/:match",
+        "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/products/:match"
       },
       {
-        "source": "/api/category",
-        "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/category"
+        "source": "/api/category/:match",
+        "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/category/:match"
       }, 
       {
         "source": "/api/home/:match",
