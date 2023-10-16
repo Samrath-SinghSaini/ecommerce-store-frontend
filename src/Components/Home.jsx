@@ -159,7 +159,7 @@ function Home() {
         <button className="arrow-btn back-btn" name="scroll-back">
           <ArrowBack />
         </button>
-        <img src="./assets/splash1.jpg" className="bannerImg"></img>
+        <img src="/images/SplashImages/splash1.jpg" className="bannerImg"></img>
         <button className="arrow-btn forward-btn" name="scroll-forward">
           <ArrowForward />
         </button>
