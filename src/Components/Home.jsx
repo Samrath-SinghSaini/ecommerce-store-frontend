@@ -13,7 +13,7 @@ import React from "react";
 import axios from 'axios'
 function Home() {
   let card = [1, 2, 3, 4, 5, 6];
-
+  let splashURL = 'https://ecommerce-store-backend-vop3.onrender.com/images/SplashImages/bannerImage0.jpg'
   const scrollRef1 = useRef(null);
   const scrollRef2 = useRef(null)
   const [bestSellerArr, setBestSellerArr] = useState([])
@@ -159,7 +159,7 @@ function Home() {
         <button className="arrow-btn back-btn" name="scroll-back">
           <ArrowBack />
         </button>
-        <img src="https://ecommerce-store-backend-vop3.onrender.com/images/SplashImages/bannerImage0.jpg" className="bannerImg"></img>
+        <img src={splashURL} className="bannerImg"></img>
         <button className="arrow-btn forward-btn" name="scroll-forward">
           <ArrowForward />
         </button>
