@@ -22,6 +22,10 @@
       {
         "source": "/api/home/:match",
         "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/home/:match"
+      },
+      {
+        "source": "/api/user/:match",
+        "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/user/:match"
       }
     ]
   }
