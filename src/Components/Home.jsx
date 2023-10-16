@@ -13,11 +13,9 @@ import React from "react";
 import axios from 'axios'
 function Home() {
   let card = [1, 2, 3, 4, 5, 6];
-<<<<<<< HEAD
-  let splashURL = "https://ecommerce-store-backend-vop3.onrender.com/images/SplashImages/splash1.jpg"
-=======
+
   let splashURL = 'https://ecommerce-store-backend-vop3.onrender.com/images/SplashImages/bannerImage0.jpg'
->>>>>>> f36be158c3822710adca12838a39ce12590411de
+
   const scrollRef1 = useRef(null);
   const scrollRef2 = useRef(null)
   const [bestSellerArr, setBestSellerArr] = useState([])
