@@ -14,7 +14,7 @@ import axios from 'axios'
 function Home() {
   let card = [1, 2, 3, 4, 5, 6];
 
-  let splashURL = 'https://ecommerce-store-backend-vop3.onrender.com/images/SplashImages/bannerImg0.jpg'
+  let splashURL = 'https://ecommerce-store-backend-vop3.onrender.com/images/SplashImages/splash1.jpg'
 
   const scrollRef1 = useRef(null);
   const scrollRef2 = useRef(null)
