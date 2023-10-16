@@ -269,7 +269,7 @@ export default function Products(props) {
   return (
     <div className="product-page">
       <div className="product-banner">
-        <img src="/assets/img/bannerImage1.jpg" className="product-banner-img"></img>
+        <img src="https://ecommerce-store-backend-vop3.onrender.com/images/SplashImages/bannerImage0.jpg" className="product-banner-img"></img>
       </div>
 
       <div className="product-div">

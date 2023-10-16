@@ -17,7 +17,7 @@ function Header(props){
     }
     
     return <div className="header-container">
-    <span className='store-icon'><img src='/assets/img/bannerImage0.png' className='store-icon-img'></img></span>
+    <span className='store-icon'><img src='https://ecommerce-store-backend-vop3.onrender.com/images/SplashImages/storeIcon.png' className='store-icon-img'></img></span>
 
     <div className='nav-btn-container'>
         <Link to='/'>
