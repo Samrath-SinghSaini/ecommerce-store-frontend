@@ -20,8 +20,8 @@
         "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/category"
       }, 
       {
-        "source": "/api/home",
-        "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/home"
+        "source": "/api/home/:match",
+        "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/home/:match"
       }
     ]
   }
