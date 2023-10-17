@@ -27,7 +27,10 @@
       {
         "source": "/api/user/:match",
         "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/user/:match"
-      },
+      }
+    ], 
+    "redirects":[
+        
       {
         "source": "/login",
         "destination": "./src/Components/login.jsx"
@@ -45,7 +48,7 @@
         "destination": "../src/Components/wishlist.jsx"
       }, {
         "source": "/products",
-        "destination": "../Components/products.jsx"
+        "destination": "https://www.youtube.com/watch?v=tgPE8wTXiTo"
       }
     ]
     
