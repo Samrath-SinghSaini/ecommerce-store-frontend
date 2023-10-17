@@ -1,5 +1,6 @@
 
 
+
 {
     "rewrites": [
       {
@@ -26,6 +27,25 @@
       {
         "source": "/api/user/:match",
         "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/user/:match"
+      },
+      {
+        "source": "/login",
+        "destination": "/login"
+      },
+      {
+        "source": "/access",
+        "destination": "/access"
+      },
+      {
+        "source": "/register",
+        "destination": "/register"
+      },
+      {
+        "source": "/wishlist",
+        "destination": "/wishlist"
+      }, {
+        "source": "/products",
+        "destination": "/products"
       }
     ]
   }
