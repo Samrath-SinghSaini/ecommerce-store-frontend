@@ -27,28 +27,25 @@
       {
         "source": "/api/user/:match",
         "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/user/:match"
-      }
-    ], 
-    "routes":[
-
-      {
-        "src": "/login",
-        "dest": "./src/Components/login.jsx"
       },
       {
-        "src": "/access",
-        "dest": "../src/Components/access.jsx"
+        "source": "/login",
+        "destination": "./src/Components/login.jsx"
       },
       {
-        "src": "/register",
-        "dest": "../src/Components/register.jsx"
+        "source": "/access",
+        "destination": "../src/Components/access.jsx"
       },
       {
-        "src": "/wishlist",
-        "dest": "../src/Components/wishlist.jsx"
+        "source": "/register",
+        "destination": "../src/Components/register.jsx"
+      },
+      {
+        "source": "/wishlist",
+        "destination": "../src/Components/wishlist.jsx"
       }, {
-        "src": "/products",
-        "dest": "../Components/products.jsx"
+        "source": "/products",
+        "destination": "../Components/products.jsx"
       }
     ]
     
