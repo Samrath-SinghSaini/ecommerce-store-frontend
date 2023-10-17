@@ -32,23 +32,23 @@
     "routes":[
 
       {
-        "src": "../src/components/login.jsx",
-        "dest": "/login"
+        "src": "/login",
+        "dest": "./src/Components/login.jsx"
       },
       {
-        "source": "../src/components//access.jsx",
-        "destination": "/access"
+        "src": "/access",
+        "dest": "../src/Components/access.jsx"
       },
       {
-        "source": "../src/components/register.jsx",
-        "destination": "/register"
+        "src": "/register",
+        "dest": "../src/Components/register.jsx"
       },
       {
-        "source": "/wishlist",
-        "destination": "/wishlist"
+        "src": "/wishlist",
+        "dest": "../src/Components/wishlist.jsx"
       }, {
-        "source": "/products",
-        "destination": "/products"
+        "src": "/products",
+        "dest": "../Components/products.jsx"
       }
     ]
     
