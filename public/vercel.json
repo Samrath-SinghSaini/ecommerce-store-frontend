@@ -29,28 +29,10 @@
         "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/user/:match"
       },
       {
-        "source": "/login",
-        "destination": "./src/Components/login.jsx"
-      },
-      {
-        "source": "/access",
-        "destination": "../src/Components/access.jsx"
+        "source": "/(.*)",
+        "destination": "/"
       }
-    ], 
-    "redirects":[
-        
-      
-      {
-        "source": "/register",
-        "destination": "../src/Components/register.jsx"
-      },
-      {
-        "source": "/wishlist",
-        "destination": "../src/Components/wishlist.jsx"
-      }, {
-        "source": "/products",
-        "destination": "https://www.youtube.com/watch?v=tgPE8wTXiTo"
-      }
+     
     ]
     
   }
