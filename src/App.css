@@ -236,6 +236,8 @@ padding:5px 5px 10px 5px;
     height: auto;
     color: white;
     text-align: center;
+    
+    border-top:solid 3px grey;
 
 }
 .footer-icon{
@@ -607,6 +609,7 @@ cart detail section///summary sidebar stuff */
 
 .access-div{
     padding-left: 20px;
+    min-height: 80%;
 }
 
 .access-h1{

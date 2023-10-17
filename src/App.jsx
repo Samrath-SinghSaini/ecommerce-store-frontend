@@ -14,6 +14,7 @@ import ProductPage from "./Components/ProductPage";
 import Cart from "./Components/Cart";
 import Wishlist from "./Components/Wishlist";
 import Access from "./Components/Access";
+import ScrollToTop from "./Components/ScrollToTop";
 function App() {
   //const [authToken, setAuthToken] = useState(null);
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -39,6 +40,7 @@ function App() {
   }
   
   useEffect(()=>{
+    window.scrollTo({top:0})
     console.log(`from app jsx this is the user cookie val ${userNameCookie}`)
     if(logInCookie){
       setLoggedIn(true)
@@ -79,6 +81,7 @@ function App() {
       </div>
 
       <Routes>
+      
         <Route path="/" element={<Home />}></Route>
         <Route
           path="/login"
