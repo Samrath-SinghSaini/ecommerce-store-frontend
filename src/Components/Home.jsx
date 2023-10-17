@@ -16,11 +16,12 @@ function Home() {
   let card = [1, 2, 3, 4, 5, 6];
 
 
-  const scrollRef1 = useRef(null);
-  const scrollRef2 = useRef(null)
+ 
   const [bestSellerArr, setBestSellerArr] = useState([])
   const [discountArr, setDiscountArr] = useState([])
   const [categoryArr, setCategoryArr] = useState([])
+  const scrollRef1 = useRef(null);
+  const scrollRef2 = useRef(null)
   let refArr = [scrollRef1, scrollRef2]
   const navigate = useNavigate()
   // function moveElement(event) {
@@ -158,13 +159,13 @@ function Home() {
   return (
     <div className="home-page">
       <div className="banner-container">
-        <button className="arrow-btn back-btn" name="scroll-back">
+        {/* <button className="arrow-btn back-btn" name="scroll-back">
           <ArrowBack />
-        </button>
+        </button> */}
         <img src='https://ecommerce-store-backend-vop3.onrender.com/images/SplashImages/bannerImage1.jpg' className="bannerImg"></img>
-        <button className="arrow-btn forward-btn" name="scroll-forward">
+        {/* <button className="arrow-btn forward-btn" name="scroll-forward">
           <ArrowForward />
-        </button>
+        </button> */}
       </div>
       <div className="home-product-container">
         <h1>Top Selling Products For you</h1>

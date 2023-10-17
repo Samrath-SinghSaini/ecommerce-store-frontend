@@ -5,15 +5,18 @@ import { style } from "@mui/system";
 import { useEffect, useRef, useState } from "react";
 import ProductCard from "./ProductCard";
 import ArrowForward from "@mui/icons-material/ArrowForwardIos";
-
+import ShopCard from "./ShopCard";
 import ArrowBack from "@mui/icons-material/ArrowBackIos";
 import { useParams } from "react-router-dom";
+
 import Axios from "axios";
 function ProductPage(prop) {
   let { objectId } = useParams();
   const [productInfo, setProductInfo] = useState({});
   console.log("requested id is: " + objectId);
   let ratingArr = [...Array(5).fill(false)];
+  const scrollRef1 = useRef(null);
+
   let card = [1, 2, 3, 4, 5, 6];
   let rating = useRef(ratingArr);
   let starFillStyle = {
@@ -35,11 +38,41 @@ function ProductPage(prop) {
         console.log(err);
       });
   }
+  function moveElement(event, refName) {
+    let btnName = event.currentTarget.name;
+
+    // console.log(btnName);
+    // console.log(refName.current)
+    let maxScrollWidth =
+      refName.current.scrollWidth - refName.current.clientWidth;
+    // console.log("max scroll:" + maxScrollWidth);
+
+    if (btnName == "scroll-forward") {
+      refName.current.scrollLeft += 350;
+      // console.log(refName.current.scrollLeft);
+
+      if (
+        maxScrollWidth - refName.current.scrollLeft < 350 &&
+        maxScrollWidth - refName.current.scrollLeft > 0
+      ) {
+        refName.current.scrollLeft +=
+          maxScrollWidth - refName.current.scrollLeft;
+      } else if (refName.current.scrollLeft >= maxScrollWidth) {
+        refName.current.scrollLeft = 0;
+      }
+    }
+    if (btnName == "scroll-back") {
+      refName.current.scrollLeft -= 350;
+      if (refName.current.scrollLeft == 0) {
+        refName.current.scrollLeft = maxScrollWidth;
+      }
+    }
+  }
 
   useEffect(() => {
     getProductInfo();
-    window.scrollTo(0,0)
-  },[]);
+    window.scrollTo(0, 0);
+  }, []);
   function handleClick(index) {
     let tempArr = ratingArr;
     for (let i = 0; i < 5; i++) {
@@ -66,7 +99,14 @@ function ProductPage(prop) {
         <div className="item-img-div">
           <img
             className="item-img"
-            src={imgBaseUrl + "/" + productInfo.category + "/" + productInfo.image + ".jpg"}
+            src={
+              imgBaseUrl +
+              "/" +
+              productInfo.category +
+              "/" +
+              productInfo.image +
+              ".jpg"
+            }
           ></img>
         </div>
         <div className="item-info">
@@ -109,14 +149,35 @@ function ProductPage(prop) {
       </div>
       <div className="similar-product-div">
         <h2>Similar Products</h2>
-        <div className="card-container">
-          <button className="arrow-btn back-btn">
+        <div className="card-container similar-product-container" ref={scrollRef1}>
+          <button
+            className="arrow-btn back-btn item-btn item-btn-back"
+            name="scroll-forward"
+            onClick={(event) => {
+              moveElement(event, scrollRef1);
+            }}
+          >
             <ArrowBack />
           </button>
-          {card.map((value) => {
-            return <ProductCard key={value} src={souled} />;
+          {card.map((value, index) => {
+            return (
+              <ShopCard
+                key={index}
+                category="Laptop"
+                name="Apple MacBook Pro"
+                price="3000"
+                image="650398d9dbfc73f56796eacb"
+                id="650398d9dbfc73f56796eacb"
+              />
+            );
           })}
-          <button className="arrow-btn forward-btn">
+          <button
+            className="arrow-btn item-btn item-btn-forward"
+            name="scroll-back"
+            onClick={(event) => {
+              moveElement(event, scrollRef1);
+            }}
+          >
             <ArrowForward />
           </button>
         </div>

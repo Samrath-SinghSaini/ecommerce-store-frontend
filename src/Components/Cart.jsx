@@ -149,7 +149,8 @@ function Cart(props) {
   async function getCartItems(){
     try{
       let res = await axios.get('/api/user/cart', {
-        params:{userName:userName}
+        params:{userName:userName},
+        withCredentials:true
       })
       console.log('from cart get items- ')
       // console.log(res)

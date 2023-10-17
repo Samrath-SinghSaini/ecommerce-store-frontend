@@ -4,7 +4,7 @@ function ProductCard(props){
         <img className="card-img" src={props.src}></img>
         <div className="card-details-div">
         <p>{props.name}</p>
-        <p>{props.price}</p>
+        <p>${props.price}</p>
         <p>⭐⭐⭐⭐</p>
         </div>
     </div>

@@ -73,7 +73,9 @@ export default function Products(props) {
   }
   async function getCategories() {
     try {
-      let res = await Axios.get("/api/category/fetch");
+      let res = await Axios.get("/api/category/fetch", {
+        withCredentials: true,
+      });
       return res.data;
     } catch (err) {
       console.log(err);
@@ -82,7 +84,9 @@ export default function Products(props) {
   }
   async function getWishList(){
     try{
-      let res = await Axios.get('/api/user/wishlist', {params:{userName:props.userName}})
+      let res = await Axios.get('/api/user/wishlist', {params:{userName:props.userName}, 
+        withCredentials: true,
+      })
       let wishListArr = res.data.wishListArr
       // console.log(res.data.wishListArr)
 
@@ -154,16 +158,7 @@ export default function Products(props) {
      
   }, []);
 
-  // useEffect(()=>{
-  //   if(location.state){
-  //     console.log(location.state.categoryName)
-  //     if(location.state.categoryName !== undefined || location.state.categoryName !== null){
-  //       sortCategory(location.state.categoryName, true)
-  //     }
-      
-  //   }
-  // },[location.state.categoryName])
-
+ 
   //this hook is specific to brands in the sidebar
   useEffect(() => {
     let brand = getBrands();

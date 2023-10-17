@@ -138,6 +138,8 @@ margin: 10px;
 }
 .card-img{
     display: inline-block;
+    width:300px;
+    height:300px;
 }
 .arrow-btn{
     background-color: black;
@@ -455,6 +457,19 @@ margin: 10px;
 .similar-product-div{
     padding: 10px 100px;
     overflow: hidden;
+    position: relative;
+}
+.similar-product-container{
+   
+}
+.item-btn{
+    top:50%;
+}
+.item-btn-back{
+    left:5%;
+}
+.item-btn-forward{
+    right:5%;
 }
 .item-img-div{
     display: inline-block;

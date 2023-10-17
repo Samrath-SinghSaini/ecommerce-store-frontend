@@ -32,6 +32,7 @@ function Wishlist(props) {
     try {
       let res = await axios.get("/api/user/wishlist", {
         params: { userName: props.userName },
+        withCredentials:true
       });
       let wishListArr = res.data.wishListArr;
       console.log(res.data.wishListArr);
