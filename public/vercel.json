@@ -29,6 +29,10 @@
         "destination": "https://ecommerce-store-backend-vop3.onrender.com/api/user/:match"
       },
       {
+        "source":"/api/products/item/:match", 
+        "destination":"https://ecommerce-store-backend-vop3.onrender.com/api/products/:match"
+      },
+      {
         "source": "/(.*)",
         "destination": "/"
       }
