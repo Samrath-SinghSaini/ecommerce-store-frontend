@@ -31,3 +31,6 @@ npm run dev
 * Improve Admin view
 * Add payment gateway and checkout functionality 
 ## Screenshots
+![screenshot1](gitStuff/ecom2.png)
+![screenshot4](gitStuff/ecom6.png)
+![screenshot3](gitStuff/ecom5.png)
