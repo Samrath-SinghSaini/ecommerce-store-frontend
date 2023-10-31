@@ -20,15 +20,18 @@ function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [isAdmin, setAdmin] = useState(false)
   const [loggedInUserName, setLoggedInUserName] = useState('')
+  const [backendCount, setbackendCount] = useState(0)
   const navigate = useNavigate()
   let cookieValueArr = document.cookie.split('; ')
   let cookieValue = cookieValueArr.find((item)=> {return item.startsWith('isLoggedIn')})
   let adminCookieValue = cookieValueArr.find((item)=> {return item.startsWith('isAdmin')})
   let userNameCookieVal = cookieValueArr.find((item)=> {return item.startsWith('userName')})
   console.log(userNameCookieVal)
+  window.sessionStorage.setItem('backendOpened', 'false')
   let  logInCookie = false
   let adminCookie = false
   let userNameCookie = null
+
   if(cookieValue){
     logInCookie = cookieValue.split('=')[1]
   } 
@@ -41,6 +44,7 @@ function App() {
   
   useEffect(()=>{
     window.scrollTo({top:0})
+    startBackend()
     console.log(`from app jsx this is the user cookie val ${userNameCookie}`)
     if(logInCookie){
       setLoggedIn(true)
@@ -52,6 +56,14 @@ function App() {
       setLoggedInUserName(userNameCookie)
     }
   }, [])
+
+  function startBackend(){
+    let backend = window.sessionStorage.getItem('backendOpened')
+    if(backend === 'false'){
+      window.open('https://ecommerce-store-backend-vop3.onrender.com/', '_blank')
+      window.sessionStorage.setItem('backendOpened', 'true')
+    }
+  }
   
   function redirectPage(pageUrl, authCookie){
     if(authCookie){
@@ -77,7 +89,7 @@ function App() {
   return (
     <>
       <div>
-        <Header isLoggedIn={isLoggedIn} changeLogInState={changeLogInState} />
+        <Header isLoggedIn={isLoggedIn} changeLogInState={changeLogInState} userName={loggedInUserName} />
       </div>
 
       <Routes>

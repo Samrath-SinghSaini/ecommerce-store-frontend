@@ -1,12 +1,17 @@
 /* eslint-disable react/prop-types */
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 function Header(props){
     let isLoggedIn = props.isLoggedIn
     let buttonDisplayStyle = {display:'none'}
+    let userName = props.userName
+    const [isAdmin, setIsAdmin] = useState(false)
     let navigate = useNavigate()
+    useEffect(()=>{
+        
+    })
     async function logoutFunc(){
         axios.get('/api/user/logout')
         .then((res)=>{
@@ -37,6 +42,9 @@ function Header(props){
         </Link>
         <Link to='/cart'>
         <button className="nav-btn" style={{display: isLoggedIn ? 'inline-block' :'none'}} >Cart 🛒</button>
+        </Link>
+        <Link to='/admin'>
+        <button className="nav-btn" style={{display: isAdmin ? 'inline-block' :'none'}} >Admin</button>
         </Link>
         <Link to='/'>
         <button className="nav-btn" style={{display: isLoggedIn ? 'inline-block' :'none'}} onClick={logoutFunc}>Logout</button>

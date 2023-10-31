@@ -16,11 +16,8 @@ function Login(props) {
     event.preventDefault();
     if (password.length == 0 || username.length == 0) {
       setSubmitMessage("Password or Username is empty");
-    } else if (password.length < 8) {
-      setSubmitMessage(
-        "Password length is too short. Please choose a longer password."
-      );
-    } else {
+    } 
+    else {
       let loginData = {
         username: username,
         password: password,
